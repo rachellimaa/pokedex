@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Pokédex</string>
+    <string name="init_message">Nada além de rastros por aqui...</string>
+    <string name="loren_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit sagittis finibus. Quisque feugiat magna vel massa vestibulum suscipit. Duis tincidunt laoreet tortor, eget sodales urna placerat sed. Fusce vestibulum eros eros, sed suscipit nulla tristique sed. Vivamus vitae blandit sapien, eleifend efficitur sem. Ut posuere porttitor sem, at congue velit. Pellentesque gravida tincidunt nisi sit amet facilisis. Suspendisse finibus vestibulum diam, at tempor eros laoreet sit amet. Vestibulum dignissim eros velit, consectetur ultrices lectus accumsan vitae. Donec ultrices laoreet tellus vitae sollicitudin. Nam mauris arcu, gravida id bibendum quis, venenatis sed augue. Maecenas elit odio, pharetra in lacinia vitae, sollicitudin ut odio. Integer sed odio non sem imperdiet ornare.</string>
+</resources>
