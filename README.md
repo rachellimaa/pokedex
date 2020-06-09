@@ -1,0 +1,2 @@
+# pokedex
+pokedex in kotlin
