@@ -1,7 +1,6 @@
 package com.example.initkotlin
 
 import com.google.gson.GsonBuilder
-import kotlinx.android.synthetic.main.activity_pokemon_detail.*
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -15,8 +14,10 @@ interface PokeApi {
     companion object {
         val INSTANCE: PokeApi
             get() {
-                val gson = GsonBuilder().
-                registerTypeAdapter(Pokemon::class.java, PokemonJsonDeserializer()).create()
+                val gson = GsonBuilder().registerTypeAdapter(
+                    Pokemon::class.java,
+                    PokemonJsonDeserializer()
+                ).create()
 
                 return Retrofit.Builder()
                     .baseUrl("https://pokeapi.co/api/v2/")
