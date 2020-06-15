@@ -28,7 +28,7 @@ class PokemonDetailActivity : AppCompatActivity() {
                 val LatLng = LatLng(pokemon.latitude, pokemon.longitude)
                 val marker = MarkerOptions()
                     .position(LatLng)
-                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_location))
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.location))
                 it.addMarker(marker)
                 it.moveCamera(CameraUpdateFactory.newLatLng(LatLng))
                 it.moveCamera(CameraUpdateFactory.zoomTo(15f))
