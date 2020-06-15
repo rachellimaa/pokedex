@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,23 +7,67 @@
     tools:context=".AddPokemonActivity">
 
     <ImageView
+        android:id="@+id/image_gotcha"
         android:layout_width="127dp"
         android:layout_height="112dp"
-        android:src="@drawable/ic_gotcha"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="32dp"
+        android:src="@drawable/ic_gotcha"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldName"
+        android:layout_width="316dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="32dp"
+        android:background="#EFEFEF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_gotcha"
+        app:startIconDrawable="@drawable/ic_pokeball_gray">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/string_name"
+            android:inputType="textCapWords"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldLocale"
+        android:layout_width="316dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="24dp"
+        android:background="#EFEFEF"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textFieldName"
+        app:startIconDrawable="@drawable/ic_locale">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputLocale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/string_locale"
+            android:inputType="textCapWords"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:layout_width="316dp"
         android:layout_height="46dp"
-        android:background="@android:color/black"
-        android:textColor="@android:color/white"
         android:layout_marginBottom="22dp"
+        android:background="@android:color/black"
         android:text="@string/string_ready"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

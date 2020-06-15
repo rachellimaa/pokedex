@@ -6,4 +6,6 @@
     <string name="string_weight">Weight</string>
     <string name="string_locale">Localização</string>
     <string name="string_ready">PRONTO</string>
+    <string name="string_name">Nome</string>
+    <string name="label_detail_activity">Detalhes do pokémon</string>
 </resources>

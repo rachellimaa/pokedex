@@ -43,7 +43,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         recycler_view_pokemon.adapter = PokemonAdapter(pokemons) {
-            startActivity(Intent(this, PokemonDetailActivity::class.java))
+            val intent = Intent(this, PokemonDetailActivity::class.java).apply {
+                putExtra(PokemonDetailActivity.POKEMON_EXTRA, it)
+            }
+            startActivity(intent)
         }
         shouldDisplayEmptyView(pokemons.isEmpty())
     }
