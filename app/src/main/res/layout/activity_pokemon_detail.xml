@@ -25,8 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:maxLines="1"
-        android:textAlignment="center"
         android:text="@string/loren_ipsum"
+        android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,8 +40,8 @@
         android:layout_marginEnd="24dp"
         android:background="@drawable/rounded_bg"
         android:maxLines="1"
-        android:textAlignment="center"
         android:text="@string/loren_ipsum"
+        android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@id/name_pokemon_detail"
@@ -99,10 +99,10 @@
         android:id="@+id/image_pokemon_detail"
         android:layout_width="117dp"
         android:layout_height="117dp"
-        android:layout_marginEnd="63dp"
         android:layout_marginTop="104dp"
-        app:layout_constraintTop_toBottomOf="@id/id_pokemon_detail"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:layout_marginEnd="63dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_pokemon_detail" />
 
     <TextView
         android:id="@+id/string_locale"
@@ -116,5 +116,14 @@
         app:layout_constraintStart_toStartOf="@id/name_pokemon_detail"
         app:layout_constraintTop_toBottomOf="@id/weight_pokemon" />
 
-
+    <fragment
+        android:id="@+id/map_fragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="312dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/string_locale" />
 </androidx.constraintlayout.widget.ConstraintLayout>
