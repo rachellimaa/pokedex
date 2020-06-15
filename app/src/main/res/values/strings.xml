@@ -5,4 +5,5 @@
     <string name="string_height">Height</string>
     <string name="string_weight">Weight</string>
     <string name="string_locale">Localização</string>
+    <string name="string_ready">PRONTO</string>
 </resources>
