@@ -1,14 +1,18 @@
 package com.example.initkotlin
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.libraries.places.api.Places
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var adapter: PokemonAdapter
+
     // lateinit -> Initialize later
-    private var pokemons: List<Pokemon> = listOf(
+    private var pokemons: MutableList<Pokemon> = mutableListOf(
         Pokemon(
             name = "Pikachu",
             number = 25,
@@ -42,17 +46,42 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        recycler_view_pokemon.adapter = PokemonAdapter(pokemons) {
+        Places.initialize(getApplicationContext(), BuildConfig.GOOGLE_API_KEY);
+        configureRecyclerView()
+        shouldDisplayEmptyView(pokemons.isEmpty())
+        fabAddPokemon.setOnClickListener{
+            val intent = Intent(this, AddPokemonActivity::class.java)
+            startActivityForResult(intent, ADD_POKEMON_REQUEST_CODE)
+        }
+    }
+
+    private fun configureRecyclerView() {
+        adapter = PokemonAdapter(pokemons) {
             val intent = Intent(this, PokemonDetailActivity::class.java).apply {
                 putExtra(PokemonDetailActivity.POKEMON_EXTRA, it)
             }
             startActivity(intent)
         }
-        shouldDisplayEmptyView(pokemons.isEmpty())
+        recycler_view_pokemon.adapter = adapter
     }
 
     private fun shouldDisplayEmptyView(isEmpty: Boolean) {
         val visibility = if (isEmpty) View.VISIBLE else View.GONE
         emptyView.visibility = visibility
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == ADD_POKEMON_REQUEST_CODE && resultCode == Activity.RESULT_OK){
+            val pokemon = data?.getParcelableExtra<Pokemon>(AddPokemonActivity.ADD_POKEMON_EXTRA)?.let {
+                pokemons.add(it)
+                adapter.notifyDataSetChanged()
+            }
+
+        }
+    }
+
+    companion object{
+        const val ADD_POKEMON_REQUEST_CODE = 1
     }
 }

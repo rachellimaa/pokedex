@@ -5,14 +5,14 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Pokemon(
-    val name: String,
-    val number: Int,
-    val types : List<String>,
-    val imageURL : String,
-    val weight : Float,
-    val height : Float,
+    var name: String,
+    var number: Int,
+    var types : List<String>,
+    var imageURL : String,
+    var weight : Float,
+    var height : Float,
 
     // Maps
-    val latitude : Double,
-    val longitude : Double
+    var latitude : Double,
+    var longitude : Double
 ) : Parcelable
